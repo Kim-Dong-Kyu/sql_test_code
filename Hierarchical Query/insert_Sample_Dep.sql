@@ -1,0 +1,11 @@
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 101, NULL, '총괄개발부');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 102, 101, '모바일개발센터');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 103, 101, '웹개발센터');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 104, 101, '시스템개발센터');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 105, 102, '쇼핑몰(모바일)');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 106, 103, '외주SI');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 107, 103, '쇼핑몰');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 108, 105, '전산지원팀');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 109, 106, '구축1팀');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 100, 106, '구축2팀');
+INSERT INTO "Hierarchical Query_Table2" VALUES ( 111, 104, 'ERP시스템');
