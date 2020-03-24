@@ -45,7 +45,7 @@ FROM STATION
 WHERE (SUBSTR(CITY,1,1) NOT IN ('A','E', 'I','O','U')) 
   OR (SUBSTR(CITY,-1) NOT IN ('a','e', 'i','o','u'));
 
---첫번 째 글자가 모음이 이고 마지막 글자 이름이 모음이 아닌 CITY 이름 목록 
+ 
 SELECT DISTINCT CITY
 FROM STATION
 WHERE (SUBSTR(CITY,1,1) NOT IN ('A','E', 'I','O','U')) 
