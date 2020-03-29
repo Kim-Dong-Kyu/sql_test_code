@@ -9,3 +9,18 @@ ORDER BY SUBSTR(NAME,-3), ID;
 SELECT NAME
 FROM   Employee
 ORDER BY NAME;
+
+-- 10개월이 안된 사원들 중엥서 월급이 2000$ 보다 큰 사원의 이름을 오름차순으로 정렬
+SELECT NAME 
+FROM EMPLOYEE
+WHERE SALARY > 2000  AND MONTHS <10;
+
+-- 삼각형 구분
+SELECT
+    CASE 
+        WHEN (a=b) AND (a=c) THEN 'Equilateral'
+        WHEN (2*GREATEST(a,b,c)) >= (a+b+c) THEN 'Not A Triangle'
+        WHEN (a=b) OR (a=c) OR (b=c) THEN 'Isosceles'
+        ELSE 'Scalene'
+    END
+FROM triangles;
