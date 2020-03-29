@@ -24,3 +24,28 @@ SELECT
         ELSE 'Scalene'
     END
 FROM triangles;
+
+--OCCUPATIONS 테이블내 이름과 OCCUPATION의 첫글자를 합친 것을 출력하고 
+--There are a total of + occupation의 개수 를 출력하라 단 occupation의 개수를 오름차순으로 정렬 
+--만약 동일한 조건이 존재한다면 occupation 이름을 오름차순으로 정렬
+SELECT
+ CONCAT(CONCAT(CONCAT(NAME,'('),SUBSTR(OCCUPATION,1,1)),')')
+FROM OCCUPATIONS
+ORDER BY NAME;
+SELECT 
+ 'There are a total of '||COUNT(OCCUPATION)||' '||LOWER(OCCUPATION)||'s.'
+FROM OCCUPATIONS
+GROUP BY OCCUPATION
+ORDER BY COUNT(OCCUPATION), OCCUPATION;
+
+SELECT 
+ NAME||'('||SUBSTR(OCCUPATION,1,1)||')'
+FROM OCCUPATIONS
+ORDER BY NAME;
+SELECT 
+ 'There are a total of '||COUNT(OCCUPATION)||' '||LOWER(OCCUPATION)||'s.'
+FROM OCCUPATIONS
+GROUP BY OCCUPATION
+ORDER BY COUNT(OCCUPATION), OCCUPATION;
+
+
