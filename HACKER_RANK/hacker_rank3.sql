@@ -64,4 +64,20 @@ SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor) FROM
 GROUP BY RowLine;
 
 
+DECLARE
+r1 CONSTRAINT number :=0;
+r2 CONSTRAINT number :=0;
+r3 CONSTRAINT number :=0;
+r4 CONSTRAINT number :=0;
+
+SELECT MIN(DOCTOR), MIN(PROFESSOR) MIN(SINGER), MIN(ACTOR)
+FROM (
+   SELECT CASE OCCUPATION
+    WHEN 'DOCTOR'THEN r1 := r1+1 
+    WHEN THEN 
+    WHEN THEN 
+
+)
+
+
 
