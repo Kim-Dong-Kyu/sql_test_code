@@ -1,0 +1,14 @@
+-- 인구수가 100000 이상인 도시의 개수 구하기
+SELECT COUNT(*)
+FROM CITY
+WHERE POPULATION > 100000;
+
+--캘리포니아 인구수의 합계
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE DISTRICT ='California';
+
+--캘리포니아 인구스의 평균
+SELECT AVG(POPULATIOn)
+FROM CITY
+WHERE DISTRICT ='California';

@@ -76,7 +76,6 @@ FROM (
     WHEN 'DOCTOR'THEN r1 := r1+1 
     WHEN THEN 
     WHEN THEN 
-
 )
 
 
