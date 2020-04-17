@@ -31,3 +31,13 @@ FROM CITY;
 SELECT 
 CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
 FROM EMPLOYEES;
+
+
+-- 월 *판매량의 중 가장 높은 사람과  총 행의 개수를 반환하는 쿼리
+SELECT 
+  MAX(SALARY*MONTHS),
+  COUNT(*)
+FROM EMPLOYEE
+WHERE (SALARY*MONTHS) = (SELECT 
+                         MAX(SALARY*MONTHS)
+                         FROM EMPLOYEE);
