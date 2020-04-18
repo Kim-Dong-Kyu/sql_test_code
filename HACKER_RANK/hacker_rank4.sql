@@ -41,3 +41,30 @@ FROM EMPLOYEE
 WHERE (SALARY*MONTHS) = (SELECT 
                          MAX(SALARY*MONTHS)
                          FROM EMPLOYEE);
+
+--간단한 반올림 함수 활용법
+SELECT 
+  ROUND(SUM(LAT_N),2),
+  ROUND(SUM(LONG_W),2)
+FROM STATION;
+
+--간단한 버림 함수 활용법
+SELECT 
+ TRUNC(SUM(LAT_N),4)
+FROM STATION
+WHERE LAT_N >38.7880 AND LAT_N < 137.2345;
+
+-- 버림함수와 MAX 함수 
+SELECT
+ TRUNC(MAX(LAT_N),4)
+FROM STATION
+WHERE LAT_N < 137.2345;
+
+
+--서브 쿼리 해석 알아서 ~ 
+SELECT ROUND(LONG_W,4)
+FROM STATION
+WHERE LAT_N = (
+                SELECT MAX(LAT_N)
+                FROM STATION 
+                WHERE LAT_N<137.2345);
