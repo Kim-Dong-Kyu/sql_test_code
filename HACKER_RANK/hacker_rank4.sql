@@ -28,35 +28,35 @@ SELECT MAX(POPULATION) - MIN(POPULATION)
 FROM CITY;
 
 --문제 해석이 너무 힘들다 0키가 고장나서 안썼다는 거 같은데 0인부분을 제거 하고 에러 오차를 구하는 함수 구현
-SELECT 
-CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
+SELECT
+  CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
 FROM EMPLOYEES;
 
 
 -- 월 *판매량의 중 가장 높은 사람과  총 행의 개수를 반환하는 쿼리
-SELECT 
+SELECT
   MAX(SALARY*MONTHS),
   COUNT(*)
 FROM EMPLOYEE
-WHERE (SALARY*MONTHS) = (SELECT 
-                         MAX(SALARY*MONTHS)
-                         FROM EMPLOYEE);
+WHERE (SALARY*MONTHS) = (SELECT
+  MAX(SALARY*MONTHS)
+FROM EMPLOYEE);
 
 --간단한 반올림 함수 활용법
-SELECT 
+SELECT
   ROUND(SUM(LAT_N),2),
   ROUND(SUM(LONG_W),2)
 FROM STATION;
 
 --간단한 버림 함수 활용법
-SELECT 
- TRUNC(SUM(LAT_N),4)
+SELECT
+  TRUNC(SUM(LAT_N),4)
 FROM STATION
 WHERE LAT_N >38.7880 AND LAT_N < 137.2345;
 
 -- 버림함수와 MAX 함수 
 SELECT
- TRUNC(MAX(LAT_N),4)
+  TRUNC(MAX(LAT_N),4)
 FROM STATION
 WHERE LAT_N < 137.2345;
 
@@ -66,5 +66,14 @@ SELECT ROUND(LONG_W,4)
 FROM STATION
 WHERE LAT_N = (
                 SELECT MAX(LAT_N)
-                FROM STATION 
-                WHERE LAT_N<137.2345);
+FROM STATION
+WHERE LAT_N<137.2345);
+
+
+--MIN 함수
+SELECT
+  MIN(ROUND(LAT_N,4))
+FROM STATION
+WHERE LAT_N >38.7780;
+
+
