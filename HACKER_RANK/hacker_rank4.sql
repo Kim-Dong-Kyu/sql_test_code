@@ -95,3 +95,12 @@ FROM (
     MAX(LAT_N) AS c, MAX(LONG_W) AS d
     FROM STATION
 ) ;
+
+-- oracle 제곱과 제곱근 함수
+SELECT
+    ROUND(SQRT(
+        POWER(MAX(LAT_N)  - MIN(LAT_N),  2)
+      + POWER(MAX(LONG_W) - MIN(LONG_W), 2)
+    ), 4)
+FROM 
+    STATION;
