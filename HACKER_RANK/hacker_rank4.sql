@@ -104,3 +104,28 @@ SELECT
     ), 4)
 FROM 
     STATION;
+
+-- 찾아봤지만 안되는거 
+Select round(S.LAT_N,4) 
+from station AS S 
+where (
+        select count(Lat_N) 
+        from station 
+        where Lat_N < S.LAT_N ) = (select count(Lat_N) 
+                                   from station 
+                                   where Lat_N > S.LAT_N);
+
+--되는거
+SELECT CAST(LAT_N AS DECIMAL (7,4))
+FROM
+    (
+      SELECT LAT_N, ROW_NUMBER() OVER (ORDER BY LAT_N) as ROWNU 
+      FROM STATION 
+     ) AS X
+WHERE ROWNU = ( 
+                SELECT ROUND((COUNT(LAT_N)+1)/2,0) 
+                FROM STATION
+               );
+
+
+
