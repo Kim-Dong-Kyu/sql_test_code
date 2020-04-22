@@ -127,5 +127,9 @@ WHERE ROWNU = (
                 FROM STATION
                );
 
+-- where 절 equi join  문제
+SELECT SUM(CITY.POPULATION) 
+FROM CITY, COUNTRY
+WHERE CITY.COUNTRYCODE = COUNTRY.CODE AND COUNTRY.CONTINENT = 'Asia';
 
 
