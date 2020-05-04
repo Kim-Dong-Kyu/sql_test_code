@@ -1,0 +1,23 @@
+--with는 이름이 부여된 서브쿼리라고 생각하면 됩니다
+
+WITH NAME AS (
+      SELECT  FIRST_NAME ,
+      			    LAST_NAME 
+      FROM  EMPLOYEES e 
+      WHERE DEPARTMENT_ID =90
+)SELECT *
+ FROM NAME;
+
+-- 다중 WITH 절   
+WITH NAME AS (
+      SELECT  FIRST_NAME ,
+      			    LAST_NAME 
+      FROM  EMPLOYEES e 
+      WHERE DEPARTMENT_ID =90
+), EMAIL AS(
+	    SELECT EMAIL 
+	    FROM EMPLOYEES e2 
+	    WHERE DEPARTMENT_ID  =90
+)
+SELECT *  
+  FROM NAME, EMAIL; 
