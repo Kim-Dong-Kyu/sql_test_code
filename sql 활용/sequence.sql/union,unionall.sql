@@ -6,3 +6,20 @@
    2. 각 컬럼은 같은 데이터 타입 이여야 한다
    3. SELECT 문의 열 순서는 동일한 순서로 이루어져야 한다.
 */
+
+SELECT DEPARTMENT_ID
+FROM DEPARTMENTS d 
+WHERE DEPARTMENT_NAME  IN('IT','Public Relations','Sales','Executive','Finance')
+UNION 
+SELECT DEPARTMENT_ID 
+FROM EMPLOYEES e 
+WHERE DEPARTMENT_ID  < 100
+
+
+SELECT DEPARTMENT_ID
+FROM DEPARTMENTS d 
+WHERE DEPARTMENT_NAME  IN('IT','Public Relations','Sales','Executive','Finance')
+UNION ALL
+SELECT DEPARTMENT_ID 
+FROM EMPLOYEES e 
+WHERE DEPARTMENT_ID  < 100
