@@ -32,3 +32,16 @@ FROM   (
          ) AS difference
   FROM   DUAL
 );// 일 시분 초 예제
+
+
+
+SELECT seq "사번",
+     , SUBSTR(name_h, 1, 1)||'**' AS "성명",
+     , regi_date AS "입사일",
+     , MONTHS_BETWEEN(SYSDATE, regi_date) AS "개월차", 무     
+     , TRUNC(MONTHS_BETWEEN(SYSDATE, regi_date)/12,0) AS "년",
+     , TRUNC(MOD(MONTHS_BETWEEN(SYSDATE, regi_date)/12, 1)*12,0) AS "월",
+     , ROUND(MOD(MOD(MONTHS_BETWEEN(SYSDATE, regi_date)/12, 1)*12, 1)*(365/12),0) AS "일"
+  FROM EMPT;
+
+   //  두 시간 사이 년 월 일 시간 분 초 구하기
