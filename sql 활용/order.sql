@@ -19,7 +19,7 @@ ORDER BY COL1 NULLS LAST
 SELECT  * FROM T
 
 ORDER BY COL1 NULLS FIRST
--- NULL 인 값을 우선으로 정렬
+-- NULL 인 값을 우선으로 정렬azxsss 
 
 
 
