@@ -11,3 +11,5 @@ SELECT SEQ_TEST.NEXTVAL FROM DUAL;
 -- INDEX 증가를 확인할 수 있다 .
 SELECT SEQ_TEST.CURRVAL FORM DUAL 
 --현재 인덱스를 확인할 수 있다.
+ALTER SEQUENCE SEQ_TEST INCREMENT BY [] 
+-- [ ]안에 값만큼 증가량을 변경 시킬 수 있다 
