@@ -60,3 +60,16 @@ SELECT ID FROM BASE
 
 -- 1 과 2 사이에 문자가 잇거나 없거나 상관없음
 
+
+WITH BASE AS (
+    SELECT 'aA11'   AS ID FROM DUAL UNION ALL   
+    SELECT '1qw211e' AS ID FROM DUAL UNION ALL   
+    SELECT '1qwe#'  AS ID FROM DUAL UNION ALL   
+    SELECT 'e*'     AS ID FROM DUAL UNION ALL   
+    SELECT '@!'     AS ID FROM DUAL UNION ALL   
+    SELECT '123'    AS ID FROM DUAL)
+SELECT ID FROM BASE
+ WHERE REGEXP_LIKE(ID, '^[^0-9]*$');
+-- 문자로만 조합된 문자열
+
+
