@@ -11,9 +11,13 @@ SELECT empno, NVL2(mgr, 1, 0) mgr
  
  -- NVL2 NVL과 DECODE의 개념을 병합했다고 생각하면 된다 
 
-  NULLIF(exp1, exp2)
+NULLIF(exp1, exp2)
 
 -- exp1 과  exp2 의 값이 동일하면 NULL 아니면 exp1을 반환한다 
+
+LNNVL() 
+-- 안에 조건문이 true 일경우 false를 출력 false 일 경우 true를 출력
+
 
 
 
